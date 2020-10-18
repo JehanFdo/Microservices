@@ -1,0 +1,17 @@
+server:
+  port: 8184
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: medihelp-presentation-tier
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8661/eureka/
+  instance:
+    hostname: localhost

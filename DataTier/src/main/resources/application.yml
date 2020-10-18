@@ -1,0 +1,24 @@
+server:
+  port: 8183
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: user01
+    password: ijse123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 10
+      idle-timeout: 10000
+      maximum-pool-size: 30
+  application:
+    name: medihelp-data-service
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8661/eureka/
+  instance:
+    hostname: localhost

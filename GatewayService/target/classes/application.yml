@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: service-registry
+server:
+  port: 8662
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8661/eureka/
+  instance:
+    hostname: localhost
+
+zuul:
+  routes:
+    medihelp-presentation-tier:
+      path: /presentation/**
+      serviceId: medihelp-presentation-tier
+      stripPrefix: true
+    medihelp-business-tier:
+      path: /business/**
+      serviceId: medihelp-business-tier
+      stripPrefix: true
+    medihelp-data-service:
+      path: /data/**
+      serviceId: medihelp-data-service
+      stripPrefix: true
